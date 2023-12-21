@@ -1,26 +1,33 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import React, { useState, useCallback } from 'react';
-import Button from '../atoms/Button';
-import Dice from '../../models/Dice';
-import Row from '../atoms/Row';
+import { Button, Row } from '../../customTags';
+import Dice from '../../../models/Dice';
+import NumberButton from '../../atoms/diceCalculatorPage/NumberButton';
 
-const Keyboard = () => {
-	const [operation, setOperation] = useState<string>('');
-	const [result, setResult] = useState<string>('');
+/*
+TODO:
+MAKE "()", OPERATORS AND NUMBERS BUTTON
+*/
+
+type Props = {
+	operation: string;
+	setOperation: (value: string) => void;
+	setResult: (value: string) => void;
+};
+
+export const Keyboard = ({ operation, setOperation, setResult }: Props) => {
 	const [open, setOpen] = useState<boolean>(true);
 
 	const handleParenthesis = useCallback(() => {
 		setOpen(!open);
 		open ? setOperation(operation + '(') : setOperation(operation + ')');
 	}, [open, setOpen, operation, setOperation]);
-	const dice = new Dice();
 
 	return (
 		<View style={styles.container}>
-			<TextInput editable={false} placeholder={operation} />
-			<TextInput editable={false} placeholder={result} />
 			<Row>
-				<View>
+				<>
+					<NumberButton />
 					<Button
 						onClick={() => setOperation(operation + '1')}
 						style={styles.button}
@@ -45,10 +52,10 @@ const Keyboard = () => {
 					>
 						<Text style={styles.text}>+</Text>
 					</Button>
-				</View>
+				</>
 			</Row>
 			<Row>
-				<View>
+				<>
 					<Button
 						onClick={() => setOperation(operation + '4')}
 						style={styles.button}
@@ -73,10 +80,10 @@ const Keyboard = () => {
 					>
 						<Text style={styles.text}>-</Text>
 					</Button>
-				</View>
+				</>
 			</Row>
 			<Row>
-				<View>
+				<>
 					<Button
 						onClick={() => setOperation(operation + '7')}
 						style={styles.button}
@@ -101,10 +108,10 @@ const Keyboard = () => {
 					>
 						<Text style={styles.text}>*</Text>
 					</Button>
-				</View>
+				</>
 			</Row>
 			<Row>
-				<View>
+				<>
 					<Button
 						onClick={() => setResult(`${eval(operation)}`)}
 						style={styles.button}
@@ -126,13 +133,11 @@ const Keyboard = () => {
 					>
 						<Text style={styles.text}>/</Text>
 					</Button>
-				</View>
+				</>
 			</Row>
 		</View>
 	);
 };
-
-export default Keyboard;
 
 const styles = StyleSheet.create({
 	container: {
@@ -143,6 +148,8 @@ const styles = StyleSheet.create({
 		aspectRatio: 1 / 1,
 		margin: 10,
 		backgroundColor: 'cyan',
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	text: {
 		fontSize: 30,

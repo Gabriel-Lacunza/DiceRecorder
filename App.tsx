@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native';
-import DiceCalculator from './components/templates/DiceCalculator';
+import DiceCalculatorPage from './components/pages/DiceCalculatorPage';
 
 export default function App() {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<StatusBar style="auto" />
-			<DiceCalculator />
+			<DiceCalculatorPage />
 		</SafeAreaView>
 	);
 }

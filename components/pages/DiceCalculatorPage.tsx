@@ -1,14 +1,16 @@
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
-import { CampaingSelection } from '../templates/CampaingSelection';
+import { DiceCalculator } from '../templates/DiceCalculator';
 
-const CampaingSelectionPage = () => {
+const DiceCalculatorPage = () => {
 	return (
 		<View style={styles.container}>
-			<CampaingSelection />
+			<DiceCalculator />
 		</View>
 	);
 };
+
+export default DiceCalculatorPage;
 
 const styles = StyleSheet.create({
 	container: {
@@ -18,5 +20,3 @@ const styles = StyleSheet.create({
 		width: '100%',
 	},
 });
-
-export default CampaingSelectionPage;
