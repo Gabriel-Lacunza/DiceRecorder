@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import { Button } from '../../customTags';
+import { styles } from './styles';
 
 type Props = {
 	dice: string;
@@ -8,22 +9,16 @@ type Props = {
 };
 
 export function DiceButton({ dice, onClick }: Props) {
+	const width: number = dice.length * 20 + 20;
+
 	return (
-		<View style={styles.button}>
-			<Button onClick={onClick}>
-				<Text>{dice}</Text>
+		<View>
+			<Button
+				style={[styles.button, { backgroundColor: 'silver', width: width }]}
+				onClick={onClick}
+			>
+				<Text style={styles.text}>{dice}</Text>
 			</Button>
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	button: {
-		width: 70,
-		aspectRatio: 1 / 1,
-		marginHorizontal: 10,
-		backgroundColor: 'grey',
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-});
