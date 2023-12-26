@@ -1,13 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React, { useState, useCallback } from 'react';
-import { Button, Row } from '../../customTags';
-import Dice from '../../../models/Dice';
-import NumberButton from '../../atoms/diceCalculatorPage/NumberButton';
-
-/*
-TODO:
-MAKE "()", OPERATORS AND NUMBERS BUTTON
-*/
+import { Row } from '../../customTags';
+import { KeyButton } from '../../atoms';
 
 type Props = {
 	operation: string;
@@ -27,112 +21,37 @@ export const Keyboard = ({ operation, setOperation, setResult }: Props) => {
 		<View style={styles.container}>
 			<Row>
 				<>
-					<NumberButton />
-					<Button
-						onClick={() => setOperation(operation + '1')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>1</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '2')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>2</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '3')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>3</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + ' + ')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>+</Text>
-					</Button>
+					<KeyButton char="1" onClick={() => setOperation(operation + '1')} />
+					<KeyButton char="2" onClick={() => setOperation(operation + '2')} />
+					<KeyButton char="3" onClick={() => setOperation(operation + '3')} />
+					<KeyButton char="+" onClick={() => setOperation(operation + '+')} />
 				</>
 			</Row>
 			<Row>
 				<>
-					<Button
-						onClick={() => setOperation(operation + '4')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>4</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '5')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>5</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '6')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>6</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + ' - ')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>-</Text>
-					</Button>
+					<KeyButton char="4" onClick={() => setOperation(operation + '4')} />
+					<KeyButton char="5" onClick={() => setOperation(operation + '5')} />
+					<KeyButton char="6" onClick={() => setOperation(operation + '6')} />
+					<KeyButton char="-" onClick={() => setOperation(operation + '-')} />
 				</>
 			</Row>
 			<Row>
 				<>
-					<Button
-						onClick={() => setOperation(operation + '7')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>7</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '8')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>8</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '9')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>9</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + ' * ')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>*</Text>
-					</Button>
+					<KeyButton char="7" onClick={() => setOperation(operation + '7')} />
+					<KeyButton char="8" onClick={() => setOperation(operation + '8')} />
+					<KeyButton char="9" onClick={() => setOperation(operation + '9')} />
+					<KeyButton char="*" onClick={() => setOperation(operation + '*')} />
 				</>
 			</Row>
 			<Row>
 				<>
-					<Button
-						onClick={() => setResult(`${eval(operation)}`)}
-						style={styles.button}
-					>
-						<Text style={styles.text}>=</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + '0')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>0</Text>
-					</Button>
-					<Button onClick={() => handleParenthesis()} style={styles.button}>
-						<Text style={styles.text}>{open ? '(' : ')'}</Text>
-					</Button>
-					<Button
-						onClick={() => setOperation(operation + ' / ')}
-						style={styles.button}
-					>
-						<Text style={styles.text}>/</Text>
-					</Button>
+					<KeyButton char="=" onClick={() => setResult(`${eval(operation)}`)} />
+					<KeyButton char="0" onClick={() => setOperation(operation + '0')} />
+					<KeyButton
+						char={open ? '(' : ')'}
+						onClick={() => handleParenthesis()}
+					/>
+					<KeyButton char="/" onClick={() => setOperation(operation + '/')} />
 				</>
 			</Row>
 		</View>
@@ -142,16 +61,5 @@ export const Keyboard = ({ operation, setOperation, setResult }: Props) => {
 const styles = StyleSheet.create({
 	container: {
 		justifyContent: 'flex-end',
-	},
-	button: {
-		width: 70,
-		aspectRatio: 1 / 1,
-		margin: 10,
-		backgroundColor: 'cyan',
-		justifyContent: 'center',
-		alignItems: 'center',
-	},
-	text: {
-		fontSize: 30,
 	},
 });
