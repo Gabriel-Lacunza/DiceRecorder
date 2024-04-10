@@ -8,6 +8,11 @@ export function Calculator() {
 	const [result, setResult] = useState<string>('');
 	const dice = new Dice();
 
+	/* TODO:
+		arreglar el corregir la suma ([2,2] => 4, no error)
+		agregar keep higher o lower X
+	*/
+
 	const handleResult = useCallback(() => {
 		if (operation.includes('D')) {
 			const list = operation.split(' ');
@@ -34,7 +39,11 @@ export function Calculator() {
 
 	return (
 		<View>
-			<CalculatorInput operation={operation} result={result} />
+			<CalculatorInput
+				operation={operation}
+				setOperation={setOperation}
+				result={result}
+			/>
 			<DiceList operation={operation} setOperation={setOperation} />
 			<Keyboard
 				operation={operation}

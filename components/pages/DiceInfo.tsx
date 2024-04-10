@@ -1,6 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
+/*
+	TODO:
+	-que diga el tipo de dado
+	- agregar resumen inicial
+		- promedio
+		- graficos
+*/
+
 const DiceInfo = () => {
 	const data = [
 		{ face: 1, count: 2 },
