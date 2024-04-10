@@ -9,7 +9,7 @@ export default class Dice {
 		const c = command.toLowerCase().split('d');
 		const throws: number[] = [];
 
-		for (let i = 0; i < parseInt(c[0]); i++) {
+		for (let i = 0; i < (isNaN(parseInt(c[0])) ? 1 : parseInt(c[0])); i++) {
 			throws.push(this.throw(parseInt(c[1])));
 		}
 

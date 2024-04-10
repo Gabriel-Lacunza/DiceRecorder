@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
-import CampaingButtons from '../organisms/CampaingButtons';
-import CampaingButton from '../molecules/CampaingButton';
+import { CampaingButtons } from '../molecules/campaingSelectionPage/CampaingButtons';
+import { CampaingButton } from '../atoms/campaingSelectionPage/CampaingButton';
 
-const CampaingSelection = () => {
+export const CampaingSelection = () => {
 	const data: string[] = ['hello', 'bye', 'potato'];
 
 	return (
@@ -52,5 +52,3 @@ const styles = StyleSheet.create({
 		width: '80%',
 	},
 });
-
-export default CampaingSelection;

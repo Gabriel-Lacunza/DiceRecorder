@@ -1,17 +1,14 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 import React from 'react';
-import Keyboard from '../organisms/Keyboard';
+import { Calculator } from '../organisms/Calculator';
 
-const DiceCalculator = () => {
+export const DiceCalculator = () => {
 	return (
-		<View style={styles.container}>
-			<Text>DiceCalculator</Text>
-			<Keyboard />
-		</View>
+		<SafeAreaView style={styles.container}>
+			<Calculator />
+		</SafeAreaView>
 	);
 };
-
-export default DiceCalculator;
 
 const styles = StyleSheet.create({
 	container: {
