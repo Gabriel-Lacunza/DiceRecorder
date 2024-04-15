@@ -15,7 +15,7 @@ type Props = {
 	diceResume: faceInfo[];
 };
 
-export const CampaingLuck = ({ dice, diceResume }: Props) => {
+export const DiceLuck = ({ dice, diceResume }: Props) => {
 	const font = useFont(InterVariable, 20);
 	const [lowest, setLowest] = useState<number>(Infinity);
 	const [highest, setHighest] = useState<number>(0);

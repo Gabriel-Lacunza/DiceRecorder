@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React from 'react';
-import { FaceRow } from '../../molecules/CampaingLuckPage/FaceRow';
+import { FaceRow } from '../../molecules/DiceLuckPage/FaceRow';
 
 type faceInfo = {
 	face: number;

@@ -1,8 +1,8 @@
 import { SafeAreaView, StyleSheet } from 'react-native';
-import { CampaingLuck } from '../templates/CampaingLuck';
+import { DiceLuck } from '../templates/DiceLuck';
 import React from 'react';
 
-export const CampaingLuckPage = () => {
+export const DiceLuckPage = () => {
 	const dice = 'D4';
 	const DATA = [
 		{
@@ -25,7 +25,7 @@ export const CampaingLuckPage = () => {
 
 	return (
 		<SafeAreaView style={styles.container}>
-			<CampaingLuck dice={dice} diceResume={DATA} />
+			<DiceLuck dice={dice} diceResume={DATA} />
 		</SafeAreaView>
 	);
 };
