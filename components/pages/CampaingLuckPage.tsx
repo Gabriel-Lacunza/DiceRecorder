@@ -1,46 +1,38 @@
-import { View, Text, StyleSheet } from 'react-native';
-import { Pie, PolarChart } from 'victory-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { CampaingLuck } from '../templates/CampaingLuck';
 import React from 'react';
 
 export const CampaingLuckPage = () => {
 	const dice = 'D4';
-	const average = 2.5;
 	const DATA = [
 		{
 			face: 1,
-			count: 3,
-			color: '#003C43',
+			count: 2,
 		},
 		{
 			face: 2,
-			count: 3,
-			color: '#135D66',
+			count: 6,
 		},
 		{
 			face: 3,
-			count: 3,
-			color: '#77B0AA',
+			count: 2,
 		},
 		{
 			face: 4,
-			count: 3,
-			color: '#E3FEF7',
+			count: 2,
 		},
 	];
 
 	return (
-		<View style={styles.container}>
-			<CampaingLuck average={average} dice={dice} diceResume={DATA} />
-		</View>
+		<SafeAreaView style={styles.container}>
+			<CampaingLuck dice={dice} diceResume={DATA} />
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
 		width: '100%',
 	},
 });
