@@ -1,5 +1,5 @@
-export { CampaingButton } from './campaingSelectionPage/CampaingButton';
-export { DiceButton } from './diceCalculatorPage/DiceButton';
-export { KeyButton } from './diceCalculatorPage/KeyButton';
-export { OperationInput } from './diceCalculatorPage/OperationInput';
-export { ResultInput } from './diceCalculatorPage/ResultInput';
+export { CampaingButton } from './CampaingSelectionPage/CampaingButton';
+export { DiceButton } from './DiceCalculatorPage/DiceButton';
+export { KeyButton } from './DiceCalculatorPage/KeyButton';
+export { OperationInput } from './DiceCalculatorPage/OperationInput';
+export { ResultInput } from './DiceCalculatorPage/ResultInput';

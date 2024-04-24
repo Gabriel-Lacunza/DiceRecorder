@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
-import { CampaingButtons } from '../molecules/campaingSelectionPage/CampaingButtons';
-import { CampaingButton } from '../atoms/campaingSelectionPage/CampaingButton';
+import { CampaingButtons } from '../molecules';
+import { CampaingButton } from '../atoms';
 
 export const CampaingSelection = () => {
 	const data: string[] = ['hello', 'bye', 'potato'];

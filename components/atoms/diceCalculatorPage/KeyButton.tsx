@@ -1,14 +1,13 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { Button } from '../../customTags';
-import { styles } from './styles';
+import { styles } from './Styles';
 
 type Props = {
 	char: string;
 	onClick: () => void;
 };
-
-export function KeyButton({ char, onClick }: Props) {
+export const KeyButton = ({ char, onClick }: Props) => {
 	return (
 		<View>
 			<Button style={styles.button} onClick={onClick}>
@@ -16,4 +15,4 @@ export function KeyButton({ char, onClick }: Props) {
 			</Button>
 		</View>
 	);
-}
+};

@@ -7,7 +7,7 @@ type Props = {
 	setOperation: (value: string) => void;
 };
 
-export function DiceList({ operation, setOperation }: Props) {
+export const DiceList = ({ operation, setOperation }: Props) => {
 	const dices = ['D4', 'D6', 'D8', 'D10', 'D12', 'D20', 'D100'];
 	return (
 		<View style={styles.container}>
@@ -24,7 +24,7 @@ export function DiceList({ operation, setOperation }: Props) {
 			/>
 		</View>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	container: {

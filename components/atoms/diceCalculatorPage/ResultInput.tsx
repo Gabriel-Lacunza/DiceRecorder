@@ -5,13 +5,13 @@ type Props = {
 	result: string;
 };
 
-export function ResultInput({ result }: Props) {
+export const ResultInput = ({ result }: Props) => {
 	return (
 		<View>
 			<TextInput editable={false} placeholder={result} style={styles.result} />
 		</View>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	result: {

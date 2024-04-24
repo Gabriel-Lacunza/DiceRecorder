@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React from 'react';
-import { DiceRow } from '../../molecules/CampaingLuckPage/DiceRow';
+import { DiceRow } from '../../molecules';
 
 type dice = {
 	dice: string;
@@ -15,7 +15,9 @@ export const DiceRows = ({ data }: Props) => {
 	return (
 		<View>
 			{data.map((dice, index) => (
-				<DiceRow identifer={index} average={dice.average} dice={dice.dice} />
+				<View key={index}>
+					<DiceRow identifer={index} average={dice.average} dice={dice.dice} />
+				</View>
 			))}
 		</View>
 	);

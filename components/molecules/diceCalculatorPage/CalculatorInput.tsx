@@ -8,11 +8,11 @@ type Props = {
 	result: string;
 };
 
-export function CalculatorInput({ operation, setOperation, result }: Props) {
+export const CalculatorInput = ({ operation, setOperation, result }: Props) => {
 	return (
 		<View>
 			<OperationInput operation={operation} setOperation={setOperation} />
 			<ResultInput result={result} />
 		</View>
 	);
-}
+};

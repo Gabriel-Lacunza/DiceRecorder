@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { Pie, PolarChart, CartesianChart, Bar } from 'victory-native';
+import { View, Text, Dimensions } from 'react-native';
+import { CartesianChart, Bar } from 'victory-native';
 import React, { useEffect, useState } from 'react';
 import { useFont } from '@shopify/react-native-skia';
 import InterVariable from '../../assets/fonts/InterVariable.ttf';
-import { FaceRows } from '../organisms/DiceLuckPage/FaceRows';
+import { FaceRows } from '../organisms';
 
 type faceInfo = {
 	face: number;

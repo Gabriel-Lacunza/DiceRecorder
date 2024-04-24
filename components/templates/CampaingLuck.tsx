@@ -1,6 +1,6 @@
 import { View } from 'react-native';
 import React from 'react';
-import { DiceRows } from '../organisms/CampaingLuckPage/DiceRows';
+import { DiceRows } from '../organisms';
 
 export const CampaingLuck = () => {
 	const data = [

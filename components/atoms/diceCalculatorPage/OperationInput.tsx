@@ -7,7 +7,7 @@ type Props = {
 	setOperation: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export function OperationInput({ operation, setOperation }: Props) {
+export const OperationInput = ({ operation, setOperation }: Props) => {
 	return (
 		<View style={{}}>
 			<TextInput
@@ -27,7 +27,7 @@ export function OperationInput({ operation, setOperation }: Props) {
 			)}
 		</View>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	operation: {

@@ -1,14 +1,14 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text } from 'react-native';
 import React from 'react';
 import { Button } from '../../customTags';
-import { styles } from './styles';
+import { styles } from './Styles';
 
 type Props = {
 	dice: string;
 	onClick: () => void;
 };
 
-export function DiceButton({ dice, onClick }: Props) {
+export const DiceButton = ({ dice, onClick }: Props) => {
 	const width: number = dice.length * 20 + 20;
 
 	return (
@@ -21,4 +21,4 @@ export function DiceButton({ dice, onClick }: Props) {
 			</Button>
 		</View>
 	);
-}
+};

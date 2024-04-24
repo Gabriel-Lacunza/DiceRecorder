@@ -1,6 +1,6 @@
 import { StyleSheet, SafeAreaView } from 'react-native';
 import React from 'react';
-import { Calculator } from '../organisms/Calculator';
+import { Calculator } from '../organisms';
 
 export const DiceCalculator = () => {
 	return (

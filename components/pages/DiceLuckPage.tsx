@@ -2,7 +2,7 @@ import { SafeAreaView, StyleSheet } from 'react-native';
 import { DiceLuck } from '../templates/DiceLuck';
 import React from 'react';
 
-export const DiceLuckPage = () => {
+const DiceLuckPage = () => {
 	const dice = 'D4';
 	const DATA = [
 		{
@@ -36,3 +36,5 @@ const styles = StyleSheet.create({
 		width: '100%',
 	},
 });
+
+export default DiceLuckPage;

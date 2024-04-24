@@ -1,9 +1,9 @@
 import { View } from 'react-native';
 import React, { useState, useCallback } from 'react';
-import { Keyboard, DiceList, CalculatorInput } from '../molecules';
-import Dice from '../../models/Dice';
+import { Keyboard, DiceList, CalculatorInput } from '../../molecules';
+import Dice from '../../../models/Dice';
 
-export function Calculator() {
+export const Calculator = () => {
 	const [operation, setOperation] = useState<string>('');
 	const [result, setResult] = useState<string>('');
 	const dice = new Dice();
@@ -52,4 +52,4 @@ export function Calculator() {
 			/>
 		</View>
 	);
-}
+};

@@ -1,6 +1,6 @@
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import React from 'react';
-import { CampaingButton } from '..';
+import { CampaingButton } from '../../atoms';
 
 type Props = {
 	data: string[];

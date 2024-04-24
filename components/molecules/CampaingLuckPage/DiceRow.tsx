@@ -10,7 +10,6 @@ type Props = {
 };
 
 export const DiceRow = ({ identifer, dice, average }: Props) => {
-	console.log(identifer);
 	return (
 		<View>
 			<Row
