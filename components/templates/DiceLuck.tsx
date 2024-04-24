@@ -3,7 +3,7 @@ import { Pie, PolarChart, CartesianChart, Bar } from 'victory-native';
 import React, { useEffect, useState } from 'react';
 import { useFont } from '@shopify/react-native-skia';
 import InterVariable from '../../assets/fonts/InterVariable.ttf';
-import { FaceRows } from '../organisms/CampaingLuckPage/FaceRows';
+import { FaceRows } from '../organisms/DiceLuckPage/FaceRows';
 
 type faceInfo = {
 	face: number;
