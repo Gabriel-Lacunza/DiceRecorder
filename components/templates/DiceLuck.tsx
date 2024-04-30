@@ -1,9 +1,8 @@
-import { View, Text, Dimensions } from 'react-native';
-import { CartesianChart, Bar } from 'victory-native';
+import { View, Text, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useFont } from '@shopify/react-native-skia';
 import InterVariable from '../../assets/fonts/InterVariable.ttf';
-import { FaceRows } from '../organisms';
+import { FaceRows, CakeGraph } from '../organisms';
 
 type faceInfo = {
 	face: number;
@@ -49,54 +48,43 @@ export const DiceLuck = ({ dice, diceResume }: Props) => {
 		<View
 			style={{
 				flex: 1,
-				paddingHorizontal: 5,
 			}}
 		>
 			<View style={{ flex: 1 }}>
 				{/* title */}
-				<Text
-					style={{
-						marginVertical: 20,
-						fontSize: 30,
-					}}
-				>
-					{dice}
-				</Text>
+				<Text style={styles.title}>{dice}</Text>
 
 				{/* graph */}
 				<View
 					style={{
-						width: Dimensions.get('window').width * 0.9,
 						flex: 1,
-						alignSelf: 'center',
 					}}
 				>
-					<CartesianChart
-						data={diceResume}
-						xKey={'face'}
-						yKeys={['count']}
-						domain={{ y: [lowest, highest] }}
-						domainPadding={{ left: 70, right: 70 }}
-						axisOptions={{
-							font,
-						}}
-					>
-						{({ points, chartBounds }) => (
-							<Bar chartBounds={chartBounds} points={points.count} />
-						)}
-					</CartesianChart>
+					<CakeGraph
+						diceResume={diceResume}
+						font={font}
+						yAxis={[lowest, highest]}
+					/>
 				</View>
 			</View>
 			<View style={{ flex: 1 }}>
 				{/* average */}
-				<Text
-					style={{ fontSize: 20, paddingVertical: 10, alignSelf: 'center' }}
-				>
-					average: {average}
-				</Text>
+				<Text style={styles.average}>average: {average}</Text>
 
 				<FaceRows diceResume={diceResume} />
 			</View>
 		</View>
 	);
 };
+
+const styles = StyleSheet.create({
+	title: {
+		marginVertical: 20,
+		fontSize: 30,
+	},
+	average: {
+		fontSize: 20,
+		paddingVertical: 10,
+		alignSelf: 'center',
+	},
+});

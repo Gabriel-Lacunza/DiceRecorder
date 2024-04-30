@@ -1,12 +1,12 @@
-import { View, StyleSheet } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import React from 'react';
 import { CampaingSelection } from '../templates/CampaingSelection';
 
 const CampaingSelectionPage = () => {
 	return (
-		<View style={styles.container}>
+		<SafeAreaView style={styles.container}>
 			<CampaingSelection />
-		</View>
+		</SafeAreaView>
 	);
 };
 
