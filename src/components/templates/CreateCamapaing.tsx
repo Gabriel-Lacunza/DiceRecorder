@@ -3,6 +3,12 @@ import React, { useState } from 'react';
 import { Button } from '../customTags';
 import { Dropdown, MultiSelect } from 'react-native-element-dropdown';
 import { SelectDiceSet } from '../organisms';
+import { router } from 'expo-router';
+/*
+  TODO:
+  - minimizar el tamaño del tipo de set (que se vea la mitad de un elemento)
+  - hacer que no "salte" el dropdown de la seleccion de dados cuando seleccionas el set custom
+*/
 
 type dataProp = {
 	key: number;
@@ -87,6 +93,22 @@ export const CreateCamapaing = () => {
 				}}
 			>
 				<Text style={styles.text}>Create</Text>
+			</Button>
+			<Button
+				onClick={() => {
+					router.back();
+				}}
+				style={{
+					width: '90%',
+					backgroundColor: 'red',
+					height: 45,
+					borderRadius: 10,
+					alignItems: 'center',
+					justifyContent: 'center',
+					marginTop: 30,
+				}}
+			>
+				<Text style={styles.text}>Cancel</Text>
 			</Button>
 		</View>
 	);

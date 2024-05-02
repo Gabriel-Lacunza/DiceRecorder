@@ -22,7 +22,8 @@
 			}
 		},
 		"web": {
-			"favicon": "./assets/favicon.png"
+			"favicon": "./assets/favicon.png",
+			"bundler": "metro"
 		},
 		"plugins": [
 			[
@@ -30,7 +31,12 @@
 				{
 					"fonts": ["./assets/fonts/InterVariable.ttf"]
 				}
-			]
-		]
+			],
+			"expo-router"
+		],
+		"experiments": {
+			"tsconfigPaths": true
+		},
+		"scheme": "DiceRecorder"
 	}
 }

@@ -2,6 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import { CampaingButtons } from '../molecules';
 import { CampaingButton } from '../atoms';
+import { router } from 'expo-router';
 
 export const CampaingSelection = () => {
 	const data: string[] = ['hello', 'bye', 'potato'];
@@ -12,7 +13,7 @@ export const CampaingSelection = () => {
 			<View style={styles.buttonContainer}>
 				<CampaingButtons data={data} />
 				<CampaingButton
-					onClick={() => console.log('new campaing')}
+					onClick={() => router.push('/CreateCampaing')}
 					text={'New Campaing'}
 					color={'tomato'}
 				/>

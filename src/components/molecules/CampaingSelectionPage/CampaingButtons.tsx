@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 import React from 'react';
 import { CampaingButton } from '../../atoms';
+import { router } from 'expo-router';
 
 type Props = {
 	data: string[];
@@ -11,7 +12,12 @@ export const CampaingButtons = ({ data }: Props) => {
 		<View>
 			{data.map((campaing) => (
 				<CampaingButton
-					onClick={() => console.log(campaing)}
+					onClick={() =>
+						router.push({
+							pathname: '/[campaing]',
+							params: { campaing: campaing },
+						})
+					}
 					text={campaing}
 					key={campaing}
 				/>

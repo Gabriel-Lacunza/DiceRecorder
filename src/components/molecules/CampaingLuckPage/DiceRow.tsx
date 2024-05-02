@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Row } from '../../customTags';
 import { Button } from '../../customTags';
+import { router } from 'expo-router';
 
 type Props = {
 	identifer: number;
@@ -21,7 +22,10 @@ export const DiceRow = ({ identifer, dice, average }: Props) => {
 					<Text style={styles.text}>{average}</Text>
 					<Button
 						onClick={() => {
-							console.log(dice);
+							router.push({
+								pathname: '/[campaing]/[dice]',
+								params: { dice: dice },
+							});
 						}}
 						style={styles.button}
 					>

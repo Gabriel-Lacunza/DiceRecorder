@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useFont } from '@shopify/react-native-skia';
-import InterVariable from '../../assets/fonts/InterVariable.ttf';
+import InterVariable from '../../../assets/fonts/InterVariable.ttf';
 import { FaceRows, CakeGraph } from '../organisms';
 
 type faceInfo = {
